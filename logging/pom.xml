@@ -20,7 +20,9 @@
     <module>slf4j-logback</module>
     <module>slf4j-logback-xml</module>
     <module>slf4j-simplelogger</module>
+
     <module>log4j-MDC</module>
+    <module>slf4j-logback-MDC</module>
   </modules>
 
 </project>
