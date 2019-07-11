@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook;
+package pers.xiaoming.notebook.log4j;
 
 import org.apache.log4j.MDC;
 import org.junit.Before;
@@ -38,7 +38,7 @@ public class Demo {
             MDC.put("user.id", i);
             MDC.put("user.name", "myname" + i);
 
-            MDCLog4jPatternDemoRunner runner = new MDCLog4jPatternDemoRunner(countDownLatch);
+            MDCPatternDemoRunner runner = new MDCPatternDemoRunner(countDownLatch);
             executor.submit(runner);
         }
 
