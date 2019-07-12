@@ -22,11 +22,14 @@ public class Demo {
     @Test
     public void MDCGetterDemo() throws InterruptedException {
         for (int i = 0; i < NUM_THREADS; i++) {
-            MDC.put("user_id", String.valueOf(i));
-            MDC.put("user_name", "myname" + i);
 
+            final int index = i;
             MDCGetterDemoRunner runner = new MDCGetterDemoRunner(countDownLatch);
-            executor.submit(runner);
+            executor.submit(() -> {
+                MDC.put("user_id", String.valueOf(index));
+                MDC.put("user_name", "myname" + index);
+                runner.run();
+            });
         }
 
         countDownLatch.await();
@@ -35,11 +38,15 @@ public class Demo {
     @Test
     public void MDClog4JPatternDemo() throws InterruptedException {
         for (int i = 0; i < NUM_THREADS; i++) {
-            MDC.put("user.id", String.valueOf(i));
-            MDC.put("user.name", "myname" + i);
+
+            final int index = i;
 
             MDCPatternDemoRunner runner = new MDCPatternDemoRunner(countDownLatch);
-            executor.submit(runner);
+            executor.submit(() -> {
+                MDC.put("user.id", String.valueOf(index));
+                MDC.put("user.name", "myname" + index);
+                runner.run();
+            });
         }
 
         countDownLatch.await();
