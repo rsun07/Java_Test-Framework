@@ -1,9 +1,20 @@
 package pers.xiaoming.notebook.junit4;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExternalResource;
+import org.junit.rules.TestWatcher;
+import org.junit.rules.Verifier;
+import org.junit.runner.Description;
+
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
+import java.util.concurrent.TimeUnit;
 
 public class RuleAndClassRuleDemo {
 
@@ -15,47 +26,96 @@ public class RuleAndClassRuleDemo {
      *  before Rules defined by methods.
      */
     @ClassRule
-    public static EmbeddedMySql embeddedMySql = new EmbeddedMySql();
+    public static EmbeddedStorage embeddedMySql = new EmbeddedMySql();
 
     @ClassRule
-    public static EmbeddedRedis embeddedRedis = new EmbeddedRedis();
+    public static EmbeddedStorage embeddedRedis = new EmbeddedRedis();
 
-    private static class EmbeddedMySql extends ExternalResource {
+    public static EmbeddedStorage embeddedOracle = new EmbeddedOracle();
+
+    private static abstract class EmbeddedStorage extends ExternalResource {
+        protected abstract String getName();
+
         @Override
         protected void before() throws Throwable {
-            System.out.println("Set up embedded MySql!");
+            System.out.println("Set up embedded " + getName());
         }
 
         @Override
         protected void after() {
-            System.out.println("Shutdown embedded MySql!");
+            System.out.println("Shutdown embedded " + getName());
         }
 
         public void prepareData() {
-            System.out.println("Prepare MySql Data");
+            System.out.println("Prepare Data for " + getName());
         }
     }
 
-    private static class EmbeddedRedis extends ExternalResource {
+    private static class EmbeddedMySql extends EmbeddedStorage {
         @Override
-        protected void before() throws Throwable {
-            System.out.println("Set up embedded Redis!");
+        protected String getName() {
+            return "MySQL";
         }
+    }
 
+    private static class EmbeddedRedis extends EmbeddedStorage {
         @Override
-        protected void after() {
-            System.out.println("Shutdown embedded Redis!");
+        protected String getName() {
+            return "Redis";
         }
+    }
 
-        public void prepareData() {
-            System.out.println("Prepare Redis Data");
+    private static class EmbeddedOracle extends EmbeddedStorage {
+        @Override
+        protected String getName() {
+            return "Oracle";
         }
     }
 
     @BeforeClass
     public static void prepareData() {
+        System.out.println("\n@BeforeClass");
         embeddedMySql.prepareData();
         embeddedRedis.prepareData();
+        embeddedOracle.prepareData();
+        System.out.println();
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("\n@AfterClass");
+    }
+
+    @Rule
+    public Verifier verifier = new Verifier() {
+        @Override
+        protected void verify() throws Throwable {
+            System.out.println("Verify Result");
+        }
+    };
+
+    @Rule
+    public TestWatcher testWatcher = new TestWatcher() {
+        long startEpoc;
+        @Override
+        protected void starting(Description description) {
+            startEpoc = System.currentTimeMillis();
+        }
+
+        @Override
+        protected void finished(Description description) {
+            System.out.println("Time cost is " + (System.currentTimeMillis() - startEpoc));
+        }
+    };
+
+    @Before
+    public void beforeMethod() {
+        System.out.println("\n@Before");
+    }
+
+    @After
+    public void afterMethod() {
+        System.out.println("\n@After");
     }
 
     @Test
