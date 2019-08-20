@@ -12,10 +12,6 @@ import org.junit.rules.TestWatcher;
 import org.junit.rules.Verifier;
 import org.junit.runner.Description;
 
-import java.time.Duration;
-import java.time.temporal.TemporalUnit;
-import java.util.concurrent.TimeUnit;
-
 public class RuleAndClassRuleDemo {
 
     /**
