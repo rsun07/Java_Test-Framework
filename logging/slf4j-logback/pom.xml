@@ -10,10 +10,12 @@
   </parent>
 
   <artifactId>slf4j-logback</artifactId>
-  <name>slf4j-logback</name>
+
+  <packaging>pom</packaging>
 
   <modules>
     <module>default-config</module>
+    <module>multi-logger</module>
   </modules>
 
   <properties>
@@ -22,6 +24,7 @@
     <!--<maven.test.skip>true</maven.test.skip>-->
     <slf4j.version>1.7.25</slf4j.version>
     <logback.version>1.2.3</logback.version>
+    <junit.version>4.12</junit.version>
   </properties>
 
   <dependencyManagement>
@@ -36,6 +39,14 @@
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
         <version>${logback.version}</version>
+      </dependency>
+
+      <!-- test dependencies -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

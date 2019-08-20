@@ -1,11 +1,11 @@
-package pers.xiaoming.notebook.lifecycle;
+package pers.xiaoming.notebook.testng.lifecycle;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pers.xiaoming.notebook.Singleton;
+import pers.xiaoming.notebook.testng.Singleton;
 
 // If only run test here
 // only beforeClass will run

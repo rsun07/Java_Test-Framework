@@ -1,8 +1,8 @@
-package pers.xiaoming.notebook.lifecycle;
+package pers.xiaoming.notebook.testng.lifecycle;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import pers.xiaoming.notebook.Singleton;
+import pers.xiaoming.notebook.testng.Singleton;
 
 public class TestLevelTest {
     @BeforeTest

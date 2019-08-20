@@ -1,8 +1,8 @@
-package pers.xiaoming.notebook.lifecycle;
+package pers.xiaoming.notebook.testng.lifecycle;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import pers.xiaoming.notebook.Singleton;
+import pers.xiaoming.notebook.testng.Singleton;
 
 public class SuiteLevelTest {
     @BeforeSuite

@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook;
+package pers.xiaoming.notebook.testng;
 
 public class Singleton implements AutoCloseable {
     private static String[] singleton;

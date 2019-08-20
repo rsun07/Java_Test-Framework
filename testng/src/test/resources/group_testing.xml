@@ -11,8 +11,8 @@
         </groups>
 
         <classes>
-            <class name="pers.xiaoming.notebook.testgroup.GroupTest" />
-            <class name="pers.xiaoming.notebook.testgroup.GroupTestAmend" />
+            <class name="pers.xiaoming.notebook.testng.testgroup.GroupTest" />
+            <class name="pers.xiaoming.notebook.testng.testgroup.GroupTestAmend" />
         </classes>
     </test>
 </suite>

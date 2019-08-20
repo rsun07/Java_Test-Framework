@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook.multithread;
+package pers.xiaoming.notebook.testng.multithread;
 
 
 import org.testng.annotations.Test;

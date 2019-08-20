@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook.depend;
+package pers.xiaoming.notebook.testng.depend;
 
 import org.testng.annotations.Test;
 

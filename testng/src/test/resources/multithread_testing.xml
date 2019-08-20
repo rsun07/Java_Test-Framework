@@ -9,7 +9,7 @@
     </groups>
 
     <classes>
-        <class name="pers.xiaoming.notebook.multithread.XmlTest">
+        <class name="pers.xiaoming.notebook.testng.multithread.XmlTest">
             <methods>
                 <include name="test" invocation-numbers="10"/>
             </methods>

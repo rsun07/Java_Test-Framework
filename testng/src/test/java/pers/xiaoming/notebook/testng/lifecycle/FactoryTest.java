@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook.lifecycle;
+package pers.xiaoming.notebook.testng.lifecycle;
 
 import org.testng.annotations.Factory;
 

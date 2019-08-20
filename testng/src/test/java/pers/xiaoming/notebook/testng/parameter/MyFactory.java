@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook.parameter;
+package pers.xiaoming.notebook.testng.parameter;
 
 import org.testng.annotations.Factory;
 

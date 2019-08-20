@@ -3,8 +3,8 @@
 <suite name="group_run">
     <test name="Test Depend">
         <classes>
-            <class name="pers.xiaoming.notebook.depend.DependTest" />
-            <class name="pers.xiaoming.notebook.depend.DependTestAmend" />
+            <class name="pers.xiaoming.notebook.testng.depend.DependTest" />
+            <class name="pers.xiaoming.notebook.testng.depend.DependTestAmend" />
         </classes>
     </test>
 </suite>

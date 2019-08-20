@@ -14,7 +14,7 @@
         <classes>
             <!--test level parameter-->
             <parameter name="expect-int" value="8"/>
-            <class name="pers.xiaoming.notebook.parameter.XmlTest">
+            <class name="pers.xiaoming.notebook.testng.parameter.XmlTest">
                 <!--test level parameter-->
                 <parameter name="actual-int" value="8"/>
                 <methods>
@@ -32,7 +32,7 @@
         <classes>
             <!--test level parameter-->
             <parameter name="expect-int" value="8"/>
-            <class name="pers.xiaoming.notebook.parameter.XmlTest">
+            <class name="pers.xiaoming.notebook.testng.parameter.XmlTest">
                 <!--test level parameter-->
                 <!--<parameter name="actual-int" value="88"/>-->
                 <methods>
@@ -46,8 +46,8 @@
 
     <test name="test factory">
         <classes>
-            <class name="pers.xiaoming.notebook.parameter.MyFactory"/>
-            <class name="pers.xiaoming.notebook.parameter.FactoryTest"/>
+            <class name="pers.xiaoming.notebook.testng.parameter.MyFactory"/>
+            <class name="pers.xiaoming.notebook.testng.parameter.FactoryTest"/>
         </classes>
     </test>
 </suite>

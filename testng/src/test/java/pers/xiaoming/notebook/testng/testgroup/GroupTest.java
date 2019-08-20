@@ -1,4 +1,4 @@
-package pers.xiaoming.notebook.testgroup;
+package pers.xiaoming.notebook.testng.testgroup;
 
 
 import org.testng.annotations.Test;

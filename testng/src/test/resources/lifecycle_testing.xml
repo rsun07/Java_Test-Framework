@@ -3,31 +3,31 @@
 <suite name="life_cycle_run">
     <test name="Test Life Cycle">
         <packages>
-            <package name ="pers.xiaoming.notebook.lifecycle"/>
+            <package name ="pers.xiaoming.notebook.testng.lifecycle"/>
         </packages>
     </test>
 
     <test name="Suite Level Test">
        <classes>
-           <class name="pers.xiaoming.notebook.lifecycle.SuiteLevelTest"/>
+           <class name="pers.xiaoming.notebook.testng.lifecycle.SuiteLevelTest"/>
        </classes>
     </test>
 
     <test name="Test Level Test">
         <classes>
-            <class name="pers.xiaoming.notebook.lifecycle.TestLevelTest"/>
+            <class name="pers.xiaoming.notebook.testng.lifecycle.TestLevelTest"/>
         </classes>
     </test>
 
     <test name="Class Level Test">
         <classes>
-            <class name="pers.xiaoming.notebook.lifecycle.ClassLevelTest"/>
+            <class name="pers.xiaoming.notebook.testng.lifecycle.ClassLevelTest"/>
         </classes>
     </test>
 
     <test name="Factory Method Run">
         <classes>
-            <class name="pers.xiaoming.notebook.lifecycle.FactoryTest"/>
+            <class name="pers.xiaoming.notebook.testng.lifecycle.FactoryTest"/>
         </classes>
     </test>
 
