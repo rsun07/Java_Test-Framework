@@ -1,15 +1,7 @@
-# Java_NoteBook
+# Java NoteBook-Testing Framework
+Show the common functionality of two Java popular framework Junit 4 and TestNG
 
-Notebook for learning Java logging tools, Java testing tools and so on.
-
-Structure
-
-|--Junit <br />
-|----Junit3 <br />
-|----Junit4 <br />
-
-|--TestNG <br />
-
-|--logging (Log4j, logback, slf4j) <br />
-
+## Dependency
+- [Junit 4](https://junit.org/junit4/)
+- [TestNG](https://testng.org/doc/)
 
